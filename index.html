@@ -67,24 +67,27 @@ tr:nth-child(even) {
       <div class="row justify-content-center" id="publish">
         <div class="col-md-8">
           <div class="card">
-            <div class="card-header" style="background: #428eff; color: white">Subscribe</div>
+            <div class="card-header" style="background: #428eff; color: white">Publish</div>
             <div class="card-body">
               <form>
-                <div class="form-group row">
-                  <label for="email_address" class="col-md-4 col-form-label text-md-right"><b>Topic: </b></label>
-                  <div class="col-md-6">
-                    <input type="text" id="subscriber" class="form-control" name="email-address" required autofocus>
+                  <div class="form-group row">
+                    <label for="email_address" class="col-md-4 col-form-label text-md-right"><b>Topic: </b></label>
+                    <div class="col-md-6">
+                      <input type="text" id="topic" class="form-control" name="email-address" autofocus>
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-6 offset-md-5">
-                  <button type="button" class="btn btn-success" id="subscribeBtn">
-                    Subscribe
-                  </button>
-                  <button type="button" class="btn btn-danger" id="unsubscribeBtn">
-                    Unsubscribe
-                  </button>
-                </div><br>
-              </form>
+                  <div class="form-group row">
+                    <label for="email_address" class="col-md-4 col-form-label text-md-right"><b>Payload: </b></label>
+                    <div class="col-md-6">
+                      <input type="text" id="payload" class="form-control" name="email-address" autofocus>
+                    </div>
+                  </div>
+                  <div class="col-md-6 offset-md-6">
+                    <button type="button" class="btn btn-success" id="publishBtn">
+                      Publish
+                    </button>
+                  </div><br>
+                </form>
             </div>
           </div>
         </div>
@@ -92,27 +95,24 @@ tr:nth-child(even) {
       <div class="row justify-content-center" id="subscribe">
         <div class="col-md-8">
           <div class="card">
-            <div class="card-header" style="background: #428eff; color: white">Publish</div>
+            <div class="card-header" style="background: #428eff; color: white">Subscribe</div>
             <div class="card-body">
-              <form>
-                <div class="form-group row">
-                  <label for="email_address" class="col-md-4 col-form-label text-md-right"><b>Topic: </b></label>
-                  <div class="col-md-6">
-                    <input type="text" id="topic" class="form-control" name="email-address" autofocus>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="email_address" class="col-md-4 col-form-label text-md-right"><b>Payload: </b></label>
-                  <div class="col-md-6">
-                    <input type="text" id="payload" class="form-control" name="email-address" autofocus>
-                  </div>
-                </div>
-                <div class="col-md-6 offset-md-6">
-                  <button type="button" class="btn btn-success" id="publishBtn">
-                    Publish
-                  </button>
-                </div><br>
-              </form>
+                <form>
+                    <div class="form-group row">
+                      <label for="email_address" class="col-md-4 col-form-label text-md-right"><b>Topic: </b></label>
+                      <div class="col-md-6">
+                        <input type="text" id="subscriber" class="form-control" name="email-address" required autofocus>
+                      </div>
+                    </div>
+                    <div class="col-md-6 offset-md-5">
+                      <button type="button" class="btn btn-success" id="subscribeBtn">
+                        Subscribe
+                      </button>
+                      <button type="button" class="btn btn-danger" id="unsubscribeBtn">
+                        Unsubscribe
+                      </button>
+                    </div><br>
+                  </form>
             </div>
           </div>
         </div>
