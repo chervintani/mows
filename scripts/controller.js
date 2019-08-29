@@ -3,7 +3,8 @@ var time = new Date($.now());
 $('#connectBtn').on("click", function () {
   client = mqtt.connect("ws://broker.hivemq.com:8000/mqtt")
   client.on("connect", function () {
-    $('#status').val("Successfully connected!");
+    $('#status').val("Successfully connected!").css("color","black").css("background-color","#13d641");
+    
   })
 })
 
@@ -11,7 +12,7 @@ $('#disconnectBtn').on("click", function () {
   client = mqtt.connect("ws://broker.hivemq.com:8000/mqtt")
   client.on("connect", function () {
     client.end();
-    $('#status').val("Disconnected!");
+    $('#status').val("Disconnected!").css("color","black").css("background-color","#c71906");
   })
 })
 
@@ -19,8 +20,7 @@ $('#publishBtn').on("click", function () {
   client.on("message", function (topic, payload) {
     console.log([topic, payload].join(": "));
     //adding to table the topic and payload
-    $('#table').append('<tr><td id="topicLng">' + $('#topic').val() + '</td><td id="payloadLng">' + $('#payload').val() + '</td><td id="time">' + time + '</td></tr>');
-    $('#table').append(topic + payload);
+    $('#table').append('<tr><td id="topicLng">' + topic + '</td><td id="payloadLng">' + payload + '</td><td id="time">' + time + '</td></tr>');
     $('#remove').remove();
   })
   client.publish($('#topic').val(), $('#payload').val())
