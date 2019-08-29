@@ -1,4 +1,4 @@
-
+var time = new Date($.now());
 
 $('#connectBtn').on("click", function () {
   client = mqtt.connect("ws://broker.hivemq.com:8000/mqtt")
@@ -18,19 +18,24 @@ $('#disconnectBtn').on("click", function () {
 $('#publishBtn').on("click", function () {
   client.on("message", function (topic, payload) {
     console.log([topic, payload].join(": "));
+    //adding to table the topic and payload
+    $('#table').append('<tr><td id="topicLng">' + $('#topic').val() + '</td><td id="payloadLng">' + $('#payload').val() + '</td><td id="time">' + time + '</td></tr>');
+    $('#table').append(topic + payload);
+    $('#remove').remove();
   })
   client.publish($('#topic').val(), $('#payload').val())
 })
 
-$('#subscribeBtn').on("click",function(){
-  client.subscribe($('#topic').val())
+$('#subscribeBtn').on("click", function () {
+  client.subscribe($('#subscriber').val())
+  $('#subscriber').prop('disabled', true);
 })
 
-$('#unsubscribeBtn').on("click",function(){
-  client.subscribe($('#topic').val()+'un')
+$('#unsubscribeBtn').on("click", function () {
   $('#subscriber').val("")
+  client.subscribe($('#subscriber').val())
+  $('#subscriber').prop('disabled', false);
 })
-
 
 // // advance functionalities
 // client = mqtt.connect("ws://broker.hivemq.com:8000/mqtt")

@@ -22,7 +22,16 @@ th, td {
 tr:nth-child(even) {
   background-color: #f2f2f2
 }
+
+td {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 70%;
+  height: 3px;
+  text-overflow: ellipsis; 
+}
 </style>
+
 <body class="jumbotron text-center">
 
   <main class="login-form">
@@ -101,7 +110,7 @@ tr:nth-child(even) {
                     <div class="form-group row">
                       <label for="email_address" class="col-md-4 col-form-label text-md-right"><b>Topic: </b></label>
                       <div class="col-md-6">
-                        <input type="text" id="subscriber" class="form-control" name="email-address" required autofocus>
+                    <input type="text" id="subscriber" class="form-control" name="email-address">
                       </div>
                     </div>
                     <div class="col-md-6 offset-md-5">
@@ -130,11 +139,11 @@ tr:nth-child(even) {
                       <th>Payload</th>
                       <th>Time Stamp</th>
                     </tr>
-                    <!-- <tr>
-                      <td>Eve</td>
-                      <td>Jackson</td>
-                      <td>94</td>
-                    </tr> -->
+                    <tr style="visibility: hidden" id="remove">
+                      <td></td>
+                      <td></td>
+                      <td>Thu Aug 29 2019 08:55:28 GMT+0800 (Taipei Standard Time)</td>
+                    </tr>
                   
                   </table>
             </div>
